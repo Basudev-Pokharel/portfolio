@@ -26,7 +26,7 @@ a {
   max-width: 1200px;
   margin: auto;
   padding: 10px;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 html,
 body {
@@ -98,21 +98,16 @@ ul li a {
   height: calc(100vh - 30px);
   background-color: red;
   position: relative;
-  /* display: flex;
-  text-align: left;
-  justify-content: left;
-  align-items: center; */
 }
-div.center {
+div.small-container {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(50%, 50%);
+  transform: translateY(-50%);
 }
-div.center p {
+div.small-container p {
   font-size: 20px;
 }
-div.center h2 {
+div.small-container h2 {
   font-size: 34px;
 }
 /* Media queries begins from here */
