@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --primary-bg-color: #0a192f; /*Dary Navy for BGC */
   --secondary-bg-color: #1f4068; /*Darker blur for BGC of containers */
@@ -131,18 +134,18 @@ div.small-container h2 {
 }
 
 /* About Section starts from here */
+.about-container {
+  min-height: 100vh;
+}
 .about-box {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* gap: 10px; */
-  /* background-color: yellow; */
-  color: #f2f2f2;
+  color: var(--primary-text-color);
   min-height: 40vh;
 }
 .about-children {
   flex-basis: 50%;
-  /* background-color: red; */
   min-height: 200px;
 }
 .about-children:first-child {
@@ -168,7 +171,6 @@ div.small-container h2 {
   text-align: justify;
 }
 .title-head {
-  /* background-color: green; */
   display: flex;
   gap: 10px;
   padding: 4px 0px;
@@ -184,12 +186,12 @@ div.small-container h2 {
   transition: width 0.3s ease;
   content: "";
   position: absolute;
+  background-color: var(--hover-bg);
   left: 0;
   bottom: -2px;
   border-radius: 3px;
   width: 100%;
   height: 2px;
-  background-color: yellow;
 }
 .explaination {
   text-align: justify;
@@ -202,6 +204,54 @@ div.small-container h2 {
 }
 .show-info {
   display: block;
+}
+/* My services section starts from Here */
+.services-container {
+  height: 100vh;
+}
+.bggggc {
+  /* background-color: red; */
+}
+.heading {
+  font-size: 2rem;
+  color: var(--primary-text-color);
+  text-align: center;
+}
+.services-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0px;
+  gap: 10px;
+}
+.services-item {
+  background-color: var(--secondary-bg-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  min-width: 300px;
+  /* width: calc(30% - 10px - 10px); */
+  flex-basis: 32.5%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  transition: background, transform 0.3s linear;
+}
+.services-item:hover {
+  background-color: var(--hover-bg);
+  transform: translateY(-10px);
+}
+.services-item h3 {
+  color: var(--primary-text-color);
+  margin: 10px 0px;
+}
+.services-item p {
+  color: var(--secondary-text-color);
+}
+.services-item img {
+  margin-top: 10px;
+  width: 80px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 /* Media queries begins from here */
 @media (max-width: 750px) {
