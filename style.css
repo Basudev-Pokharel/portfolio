@@ -90,25 +90,45 @@ ul li a {
 }
 .viewed-menu {
   display: block;
+  z-index: 10;
 }
 
 /* Hero section starts from Here */
 .hero-container {
   width: 100%;
   height: calc(100vh - 30px);
-  background-color: red;
+  /* background-color: red; */
   position: relative;
 }
 div.small-container {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  color: var(--primary-text-color);
 }
 div.small-container p {
   font-size: 20px;
+  color: var(--secondary-text-color);
 }
 div.small-container h2 {
-  font-size: 34px;
+  font-size: 2rem;
+}
+.small-container p:last-child {
+  color: var(--primary-text-color);
+  font-size: 1.4rem;
+}
+#typeBox {
+  position: relative;
+  color: var(--button--icon-hightlight-color);
+}
+#typeBox::after {
+  content: "";
+  width: 2px;
+  height: 25px;
+  background-color: brown;
+  position: absolute;
+  bottom: 1px;
+  margin-left: 2px;
 }
 /* Media queries begins from here */
 @media (max-width: 750px) {
