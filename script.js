@@ -39,3 +39,21 @@ function typingEffect(typingList, element) {
     }
   }, 200);
 }
+
+//About me section starts from here
+let explainedTopics = document.querySelectorAll(".explaination");
+let titleTopics = document.querySelectorAll(".title");
+titleTopics.forEach((title) => {
+  title.addEventListener("click", () => {
+    for (title of titleTopics) {
+      title.classList.remove("activee");
+    }
+    let buttonNo = Array.from(titleTopics).indexOf(event.target);
+    event.target.classList.add("activee");
+    for (explain of explainedTopics) {
+      explain.classList.remove("show-info");
+    }
+    explainedTopics[buttonNo].classList.add("show-info");
+  });
+});
+console.log(titleTopics);
