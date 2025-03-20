@@ -459,12 +459,24 @@ textarea {
 .form-button:hover {
   transform: scale(1.1);
 }
-.contact-item h3 {
-  /* margin: 15px 0px; */
+
+/* Footer style begins from here */
+footer {
+  margin-top: 15px;
+  width: 100%;
+  background-color: var(--secondary-bg-color);
+  color: var(--primary-text-color);
+  padding: 10px 0;
+  text-align: center;
 }
-.contact-item p {
-  /* margin: 0px 0px; */
+footer a {
+  color: var(--secondary-text-color);
 }
+/* .social {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+} */
 /* Media queries begins from here */
 @media (max-width: 750px) {
   /* Header part */
