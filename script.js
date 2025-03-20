@@ -56,4 +56,12 @@ titleTopics.forEach((title) => {
     explainedTopics[buttonNo].classList.add("show-info");
   });
 });
-console.log(titleTopics);
+
+//Progress bar start from here
+let progresBarWidth = document.querySelectorAll(".progress-bar-percent");
+let progressBarPercentValue = document.querySelectorAll(".progress-percent");
+progressBarPercentValue.forEach((char, Idx) => {
+  progresBarWidth[Idx].style.width = `${char.innerText}`;
+});
+
+

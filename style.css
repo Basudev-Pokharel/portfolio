@@ -36,6 +36,9 @@ body {
   width: 100%;
   /* overflow-x: clip; */
 }
+.heading-margin {
+  margin: 20px 0 40px 0;
+}
 /* Header sections starts from here */
 header {
   color: var(--primary-text-color);
@@ -136,17 +139,18 @@ div.small-container h2 {
 /* About Section starts from here */
 .about-container {
   min-height: 100vh;
+  padding: 20px 0;
 }
 .about-box {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   color: var(--primary-text-color);
-  min-height: 40vh;
+  min-height: 100vh;
 }
 .about-children {
   flex-basis: 50%;
-  min-height: 200px;
+  min-height: 300px;
 }
 .about-children:first-child {
   display: flex;
@@ -156,7 +160,7 @@ div.small-container h2 {
 .about-children img {
   max-width: 400px;
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
 }
 
@@ -165,6 +169,7 @@ div.small-container h2 {
 }
 .about-children h2 {
   font-size: 2rem;
+  margin: 16px 0px;
 }
 .about-children p {
   font-size: 0.85rem;
@@ -207,7 +212,10 @@ div.small-container h2 {
 }
 /* My services section starts from Here */
 .services-container {
-  min-height: 100vh;
+  min-height: 80vh;
+}
+.services-container .max-width h2 {
+  padding: 40px 0px;
 }
 .heading {
   font-size: 2rem;
@@ -252,13 +260,16 @@ div.small-container h2 {
 
 /* My Project section Begins from Here */
 .projects-container {
-  min-height: 100vw;
+  min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .projects-container div .heading {
   margin: 20px 0px 40px 0px;
+}
+.projects-container .max-width h2 {
+  padding: 40px 0px;
 }
 .project-box {
   display: flex;
@@ -272,7 +283,6 @@ div.small-container h2 {
   border-radius: 5px;
   position: relative;
   background-color: green;
-  /* padding: 20px; */
 }
 .project-item img {
   width: 100%;
@@ -324,7 +334,137 @@ div.small-container h2 {
 .project-item:hover .layer-here {
   height: 100%;
 }
+/* My skills section Begins from here */
+.skills-container {
+  margin: 40px 0;
+}
+.skills-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.skills-item {
+  flex-basis: 45%;
+  min-width: 300px;
+  color: var(--primary-text-color);
+}
+.progress-item {
+  padding: 5px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.progress-item p:first-child {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--secondary-text-color);
+}
+.progress-bar-percent {
+  width: 60%;
+  height: 100%;
+  background-color: var(--button--icon-hightlight-color);
+}
+.skills-item p {
+  text-align: justify;
+}
+.skills-item h2 {
+  font-size: 1.4rem;
+  color: var(--hover-bg);
+  font-weight: 500;
+}
+.skills-progress-box {
+  margin: 5px 0px;
+}
 
+/* Contact Us section Starts from here */
+.contact-container {
+  min-height: 100vh;
+  width: 100%;
+  color: var(--primary-text-color);
+}
+.contact-box {
+  display: flex;
+  gap: 20px;
+}
+.contact-item {
+  flex-basis: 50%;
+}
+.contact-item:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.contact-item h3:nth-child(2) {
+  margin: 15px 0px;
+}
+.small-details {
+  display: flex;
+  gap: 15px;
+}
+.details-text {
+  display: flex;
+  flex-direction: column;
+}
+.subhead-contact {
+  margin: 0px 0px 18px 0px;
+}
+.details-text p:nth-child(2) {
+  color: var(--secondary-text-color);
+}
+.details-icons img {
+  width: 50px;
+  aspect-ratio: 1;
+  filter: invert();
+}
+input,
+textarea {
+  border: 2px solid var(--secondary-bg-color);
+  padding: 12px 8px;
+  outline: none;
+  width: 100%;
+  border-radius: 5px;
+  margin: 8px 0px;
+}
+textarea {
+  margin-top: 0px;
+}
+.input-email {
+  display: flex;
+  gap: 10px;
+}
+.input-email input {
+  flex-basis: 50%;
+}
+.input-email input[type="email"]:valid {
+  border-color: var(--success-color);
+}
+.input-email input[type="email"]:invalid {
+  border-color: var(--button--icon-hightlight-color);
+}
+.form-button {
+  padding: 8px;
+  background-color: var(--button--icon-hightlight-color);
+  color: var(--primary-text-color);
+  border-radius: 5px;
+  border: none;
+  transition: transform 0.4s linear;
+  cursor: pointer;
+}
+.form-button:hover {
+  transform: scale(1.1);
+}
+.contact-item h3 {
+  /* margin: 15px 0px; */
+}
+.contact-item p {
+  /* margin: 0px 0px; */
+}
 /* Media queries begins from here */
 @media (max-width: 750px) {
   /* Header part */
@@ -350,5 +490,28 @@ div.small-container h2 {
   /* About section Part */
   .about-box {
     flex-direction: column;
+  }
+
+  /* My Skills section starts from Here */
+  .skills-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .skills-item {
+    width: 100%;
+  }
+
+  /* Contact section starts from here */
+  .contact-box {
+    flex-direction: column;
+  }
+}
+@media (max-width: 450px) {
+  .input-email {
+    flex-direction: column;
+  }
+  .input-email input {
+    /* width: 100%;  */
+    margin: 0px;
   }
 }
