@@ -9,13 +9,19 @@ hamMenuBtnOpen.addEventListener("click", hamshow);
 //ThemeChange Begins from here
 let themeButton = document.querySelector(".theme-Change");
 let innerTextThemeChange = document.querySelector(".theme-Change label");
-
 themeButton.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark-theme");
   if (document.documentElement.classList.contains("dark-theme")) {
-    innerTextThemeChange.innerHTML = '<i class="fa-regular fa-lightbulb"></i>';
+    setTimeout(() => {
+      innerTextThemeChange.innerHTML =
+        '<i class="fa-regular fa-lightbulb"></i>';
+    }, 200);
+    // innerTextThemeChange.innerHTML = '<i class="fa-regular fa-lightbulb"></i>';
   } else {
-    innerTextThemeChange.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    setTimeout(() => {
+      innerTextThemeChange.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    }, 200);
+    // innerTextThemeChange.innerHTML = '<i class="fa-solid fa-moon"></i>';
   }
 });
 //Typing effect begins from here
