@@ -6,6 +6,18 @@ function hamshow() {
 }
 hamMenuBtnOpen.addEventListener("click", hamshow);
 
+//ThemeChange Begins from here
+let themeButton = document.querySelector(".theme-Change");
+let innerTextThemeChange = document.querySelector(".theme-Change label");
+
+themeButton.addEventListener("click", () => {
+  document.documentElement.classList.toggle("dark-theme");
+  if (document.documentElement.classList.contains("dark-theme")) {
+    innerTextThemeChange.innerHTML = '<i class="fa-regular fa-lightbulb"></i>';
+  } else {
+    innerTextThemeChange.innerHTML = '<i class="fa-solid fa-moon"></i>';
+  }
+});
 //Typing effect begins from here
 let typeBox = document.getElementById("typeBox");
 let typeList = ["Developer", "Designer", "Student", "Tech Enthusiast"];
@@ -56,6 +68,14 @@ titleTopics.forEach((title) => {
     explainedTopics[buttonNo].classList.add("show-info");
   });
 });
+//Services more starts from here
+let showMore = document.querySelector("#service-show");
+let showMoreContent = document.querySelectorAll(".show-more");
+showMore.addEventListener("click", () => {
+  showMoreContent.forEach((char) => {
+    char.classList.toggle("block-show-more");
+  });
+});
 
 //Progress bar start from here
 let progresBarWidth = document.querySelectorAll(".progress-bar-percent");
@@ -64,4 +84,25 @@ progressBarPercentValue.forEach((char, Idx) => {
   progresBarWidth[Idx].style.width = `${char.innerText}`;
 });
 
+// Scroll-Top_TOP button Starts from here
+let scrollBox = document.querySelector(".scroll-box");
+window.addEventListener("scroll", () => {
+  let screenheight = document.documentElement.clientHeight;
+  let scrollableheight = document.documentElement.scrollHeight;
+  let scrollPercentage = Math.ceil(
+    (scrollY * 100) / (scrollableheight - screenheight)
+  );
+  scrollBox.style.background = `conic-gradient(
+    var(--button--icon-hightlight-color) ${scrollPercentage}%,
+    var(--secondary-text-color) ${scrollPercentage}%
+  )`;
+  scrollBox.addEventListener("click", () => {
+    scroll(0, 0);
+  });
 
+  if (scrollY >= 150) {
+    scrollBox.style.display = "flex";
+  } else {
+    scrollBox.style.display = "none";
+  }
+});

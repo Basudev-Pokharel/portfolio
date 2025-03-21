@@ -29,7 +29,6 @@ a {
   max-width: 1200px;
   margin: auto;
   padding: 10px;
-  /* background-color: yellow; */
 }
 html,
 body {
@@ -38,6 +37,17 @@ body {
 }
 .heading-margin {
   margin: 20px 0 40px 0;
+}
+.dark-theme {
+  --primary-bg-color: #060606; /*Dary Navy for BGC */
+  --secondary-bg-color: #2f3133; /*Darker blur for BGC of containers */
+  --primary-text-color: #ffffff; /*Light Gray Body text, paragraph */
+  --secondary-text-color: #9197a7; /*soft blur Gray dates, captions */
+  --heading-text-color: #00ffc8; /*for Hewading , title, progress bar */
+  --success-color: #00ff08; /* Green For success yeh! */
+  --error-color: #ed8897; /* Red For warning */
+  --button--icon-hightlight-color: #ff8299; /*Bright red for Buttons, icons, highlights. */
+  --hover-bg: #564a49;
 }
 /* Header sections starts from here */
 header {
@@ -58,7 +68,7 @@ header {
   font-weight: 600;
 }
 .logo-color {
-  color: var(--heading-text-color);
+  color: var(--button--icon-hightlight-color);
 }
 nav ul li {
   display: inline-block;
@@ -83,6 +93,12 @@ nav ul li::after {
 ul li:hover::after {
   width: 90%;
 }
+.dropdown li {
+  display: block;
+  position: absolute;
+  background-color: red;
+  bottom: -50px;
+}
 ul li a {
   text-decoration: none;
   color: var(--primary-text-color);
@@ -97,6 +113,23 @@ ul li a {
 .viewed-menu {
   display: block;
   z-index: 10;
+}
+li {
+  padding: 5px 0px;
+  /* background-color: yellow; */
+  position: relative;
+}
+li label {
+  font-size: 1.4rem;
+}
+li input {
+  position: absolute;
+  top: 20%;
+  left: -5%;
+  opacity: 0;
+}
+#toogleThgeme:active li label i {
+  color: green;
 }
 
 /* Hero section starts from Here */
@@ -229,33 +262,14 @@ div.small-container h2 {
   margin: 30px 0px;
   gap: 10px;
 }
-.services-item {
-  background-color: var(--secondary-bg-color);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  min-width: 300px;
-  flex-basis: 32.5%;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-  transition: background, transform 0.3s linear;
+.show-more {
+  display: none;
 }
-.services-item:hover {
-  background-color: var(--hover-bg);
-  transform: translateY(-10px);
+.block-show-more {
+  display: block;
 }
-.services-item h3 {
-  color: var(--primary-text-color);
-  margin: 10px 0px;
-}
-.services-item p {
-  color: var(--secondary-text-color);
-}
-.services-item img {
-  margin-top: 10px;
-  width: 80px;
-  border-radius: 50%;
-  aspect-ratio: 1;
-  object-fit: cover;
+#service-show {
+  margin-left: 40px;
 }
 
 /* My Project section Begins from Here */
@@ -277,7 +291,7 @@ div.small-container h2 {
   gap: 10px;
   justify-content: center;
 }
-.project-box .project-item {
+.project-item {
   min-width: 300px;
   flex-basis: 30%;
   border-radius: 5px;
@@ -311,6 +325,13 @@ div.small-container h2 {
 }
 .layer-here h3 {
   font-size: 1rem;
+}
+.layer-here img {
+  margin-top: 10px;
+  width: 80px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 .layer-here p {
   font-size: 0.85rem;
@@ -375,7 +396,7 @@ div.small-container h2 {
 }
 .skills-item h2 {
   font-size: 1.4rem;
-  color: var(--hover-bg);
+  color: var(--button--icon-hightlight-color);
   font-weight: 500;
 }
 .skills-progress-box {
@@ -384,7 +405,7 @@ div.small-container h2 {
 
 /* Contact Us section Starts from here */
 .contact-container {
-  min-height: 100vh;
+  min-height: 70vh;
   width: 100%;
   color: var(--primary-text-color);
 }
@@ -472,11 +493,39 @@ footer {
 footer a {
   color: var(--secondary-text-color);
 }
-/* .social {
-  margin: auto;
+
+/* Scroll to top button starts from here */
+.scroll-box {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  color: var(--secondary-text-color);
+  background: conic-gradient(
+    var(--button--icon-hightlight-color) 0%,
+    var(--secondary-text-color) 100%
+  );
+  border-radius: 50%;
   display: flex;
-  flex-wrap: wrap;
-} */
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  position: fixed;
+  display: none;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.scroll-item {
+  width: 93%;
+  height: 93%;
+  aspect-ratio: 1;
+  display: flex;
+  color: var(--primary-text-color);
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+  border-radius: 50%;
+}
 /* Media queries begins from here */
 @media (max-width: 750px) {
   /* Header part */
@@ -523,7 +572,10 @@ footer a {
     flex-direction: column;
   }
   .input-email input {
-    /* width: 100%;  */
     margin: 0px;
+  }
+  .scroll-box {
+    width: 60px;
+    height: 60px;
   }
 }
