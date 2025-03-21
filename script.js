@@ -74,13 +74,27 @@ titleTopics.forEach((title) => {
     explainedTopics[buttonNo].classList.add("show-info");
   });
 });
+
+//Show more about me modal Opens here
+let modalCont = document.querySelector(".modal");
+let MoreMe = document.querySelector("#MoreMe");
+let lessMe = document.querySelector("#close-modal");
+MoreMe.addEventListener("click", () => {
+  modalCont.style.display = "block";
+});
+lessMe.addEventListener("click", () => {
+  modalCont.style.display = "none";
+});
 //Services more starts from here
 let showMore = document.querySelector("#service-show");
 let showMoreContent = document.querySelectorAll(".show-more");
 showMore.addEventListener("click", () => {
+  showMore.innerText =
+    showMore.innerText === "Show More" ? "Show Less" : "Show More";
   showMoreContent.forEach((char) => {
     char.classList.toggle("block-show-more");
   });
+  // showMore.innerText = "Show more";
 });
 
 //Progress bar start from here
@@ -112,3 +126,9 @@ window.addEventListener("scroll", () => {
     scrollBox.style.display = "none";
   }
 });
+
+// Go to top on refresh
+// window.addEventListener("load", () => {
+//   console.log("Page is refreshing or closing...");
+//   scrollTo(0, 0);
+// });
