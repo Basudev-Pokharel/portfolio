@@ -1,134 +1,82 @@
-//Hamburger menu my favourite
-let hamMenu = document.getElementById("menu");
-let hamMenuBtnOpen = document.getElementById("menu-open");
+let hamMenu = document.getElementById("menu"),
+  hamMenuBtnOpen = document.getElementById("menu-open");
 function hamshow() {
   hamMenu.classList.toggle("viewed-menu");
 }
 hamMenuBtnOpen.addEventListener("click", hamshow);
-
-//ThemeChange Begins from here
-let themeButton = document.querySelector(".theme-Change");
-let innerTextThemeChange = document.querySelector(".theme-Change label");
+let themeButton = document.querySelector(".theme-Change"),
+  innerTextThemeChange = document.querySelector(".theme-Change label");
 themeButton.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark-theme");
-  if (document.documentElement.classList.contains("dark-theme")) {
-    setTimeout(() => {
-      innerTextThemeChange.innerHTML =
-        '<i class="fa-regular fa-lightbulb"></i>';
-    }, 200);
-    // innerTextThemeChange.innerHTML = '<i class="fa-regular fa-lightbulb"></i>';
-  } else {
-    setTimeout(() => {
-      innerTextThemeChange.innerHTML = '<i class="fa-solid fa-moon"></i>';
-    }, 200);
-    // innerTextThemeChange.innerHTML = '<i class="fa-solid fa-moon"></i>';
-  }
+  document.documentElement.classList.toggle("dark-theme"),
+    document.documentElement.classList.contains("dark-theme")
+      ? setTimeout(() => {
+          innerTextThemeChange.innerHTML =
+            '<i class="fa-regular fa-lightbulb"></i>';
+        }, 200)
+      : setTimeout(() => {
+          innerTextThemeChange.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }, 200);
 });
-//Typing effect begins from here
-let typeBox = document.getElementById("typeBox");
-let typeList = ["Developer", "Designer", "Student", "Tech Enthusiast"];
-typingEffect(typeList, typeBox);
-function typingEffect(typingList, element) {
-  //Declaring function to use in another place as well
-  let wordIndex = 0;
-  let typeIndex = 0;
-  let goReverse = false;
+let typeBox = document.getElementById("typeBox"),
+  typeList = ["Developer", "Designer", "Student", "Tech Enthusiast"];
+function typingEffect(e, t) {
+  let o = 0,
+    n = 0,
+    l = !1;
   setInterval(() => {
-    if (!goReverse) {
-      element.textContent += typingList[typeIndex][wordIndex];
-      wordIndex++;
-    } else {
-      element.innerText = element.innerText.slice(
-        0,
-        element.innerText.length - 1
-      );
-    }
-
-    if (wordIndex == typeList[typeIndex].length) {
-      goReverse = true;
-    }
-    if (element.innerText == "") {
-      goReverse = false;
-      typeIndex++;
-      wordIndex = 0;
-    }
-    if (typeIndex == typeList.length) {
-      typeIndex = 0;
-    }
+    l
+      ? (t.innerText = t.innerText.slice(0, t.innerText.length - 1))
+      : ((t.textContent += e[n][o]), o++),
+      o == typeList[n].length && (l = !0),
+      "" == t.innerText && ((l = !1), n++, (o = 0)),
+      n == typeList.length && (n = 0);
   }, 200);
 }
-
-//About me section starts from here
-let explainedTopics = document.querySelectorAll(".explaination");
-let titleTopics = document.querySelectorAll(".title");
-titleTopics.forEach((title) => {
-  title.addEventListener("click", () => {
-    for (title of titleTopics) {
-      title.classList.remove("activee");
-    }
-    let buttonNo = Array.from(titleTopics).indexOf(event.target);
-    event.target.classList.add("activee");
-    for (explain of explainedTopics) {
+typingEffect(typeList, typeBox);
+let explainedTopics = document.querySelectorAll(".explaination"),
+  titleTopics = document.querySelectorAll(".title");
+titleTopics.forEach((e) => {
+  e.addEventListener("click", () => {
+    for (e of titleTopics) e.classList.remove("activee");
+    let t = Array.from(titleTopics).indexOf(event.target);
+    for (explain of (event.target.classList.add("activee"), explainedTopics))
       explain.classList.remove("show-info");
-    }
-    explainedTopics[buttonNo].classList.add("show-info");
+    explainedTopics[t].classList.add("show-info");
   });
 });
-
-//Show more about me modal Opens here
-let modalCont = document.querySelector(".modal");
-let MoreMe = document.querySelector("#MoreMe");
-let lessMe = document.querySelector("#close-modal");
+let modalCont = document.querySelector(".modal"),
+  MoreMe = document.querySelector("#MoreMe"),
+  lessMe = document.querySelector("#close-modal");
 MoreMe.addEventListener("click", () => {
   modalCont.style.display = "block";
-});
-lessMe.addEventListener("click", () => {
-  modalCont.style.display = "none";
-});
-//Services more starts from here
-let showMore = document.querySelector("#service-show");
-let showMoreContent = document.querySelectorAll(".show-more");
-showMore.addEventListener("click", () => {
-  showMore.innerText =
-    showMore.innerText === "Show More" ? "Show Less" : "Show More";
-  showMoreContent.forEach((char) => {
-    char.classList.toggle("block-show-more");
+}),
+  lessMe.addEventListener("click", () => {
+    modalCont.style.display = "none";
   });
-  // showMore.innerText = "Show more";
+let showMore = document.querySelector("#service-show"),
+  showMoreContent = document.querySelectorAll(".show-more");
+showMore.addEventListener("click", () => {
+  (showMore.innerText =
+    "Show More" === showMore.innerText ? "Show Less" : "Show More"),
+    showMoreContent.forEach((e) => {
+      e.classList.toggle("block-show-more");
+    });
 });
-
-//Progress bar start from here
-let progresBarWidth = document.querySelectorAll(".progress-bar-percent");
-let progressBarPercentValue = document.querySelectorAll(".progress-percent");
-progressBarPercentValue.forEach((char, Idx) => {
-  progresBarWidth[Idx].style.width = `${char.innerText}`;
+let progresBarWidth = document.querySelectorAll(".progress-bar-percent"),
+  progressBarPercentValue = document.querySelectorAll(".progress-percent");
+progressBarPercentValue.forEach((e, t) => {
+  progresBarWidth[t].style.width = `${e.innerText}`;
 });
-
-// Scroll-Top_TOP button Starts from here
 let scrollBox = document.querySelector(".scroll-box");
 window.addEventListener("scroll", () => {
-  let screenheight = document.documentElement.clientHeight;
-  let scrollableheight = document.documentElement.scrollHeight;
-  let scrollPercentage = Math.ceil(
-    (scrollY * 100) / (scrollableheight - screenheight)
-  );
-  scrollBox.style.background = `conic-gradient(
-    var(--button--icon-hightlight-color) ${scrollPercentage}%,
-    var(--secondary-text-color) ${scrollPercentage}%
-  )`;
-  scrollBox.addEventListener("click", () => {
-    scroll(0, 0);
-  });
-
-  if (scrollY >= 150) {
-    scrollBox.style.display = "flex";
-  } else {
-    scrollBox.style.display = "none";
-  }
+  let e = document.documentElement.clientHeight,
+    t = document.documentElement.scrollHeight,
+    o = Math.ceil((100 * scrollY) / (t - e));
+  (scrollBox.style.background = `conic-gradient(\n    var(--button--icon-hightlight-color) ${o}%,\n    var(--secondary-text-color) ${o}%\n  )`),
+    scrollBox.addEventListener("click", () => {
+      scroll(0, 0);
+    }),
+    scrollY >= 150
+      ? (scrollBox.style.display = "flex")
+      : (scrollBox.style.display = "none");
 });
-
-// Go to top on refresh
-// window.addEventListener("load", () => {
-//   console.log("Page is refreshing or closing...");
-//   scrollTo(0, 0);
-// });

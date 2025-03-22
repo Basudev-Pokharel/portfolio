@@ -1,4 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+.hover-btn,
+header {
+  color: var(--primary-text-color);
+}
+.hover-btn,
+nav ul li::after {
+  background-color: var(--button--icon-hightlight-color);
+}
+a,
+ul li a {
+  text-decoration: none;
+}
+.small-container p:last-child,
+li label {
+  font-size: 1.4rem;
+}
+#typeBox,
+.about-container,
+.hero-container,
+header,
+li,
+nav ul li {
+  position: relative;
+}
+.about-children p,
+.explaination {
+  text-align: justify;
+  font-size: 0.85rem;
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,34 +37,31 @@ html {
   scroll-behavior: smooth;
 }
 :root {
-  --primary-bg-color: #0a192f; /*Dary Navy for BGC */
-  --secondary-bg-color: #1f4068; /*Darker blur for BGC of containers */
-  --primary-text-color: #f4f4f4; /*Light Gray Body text, paragraph */
-  --secondary-text-color: #8892b0; /*soft blur Gray dates, captions */
-  --heading-text-color: #50e3c2; /*for Hewading , title, progress bar */
-  --success-color: #4caf50; /* Green For success yeh! */
-  --error-color: #4caf50; /* Red For warning */
-  --button--icon-hightlight-color: #e43f5a; /*Bright red for Buttons, icons, highlights. */
-  --hover-bg: #ff6f61; /*Coral for Hover effects, secondary buttons, animations.s */
+  --primary-bg-color: #0a192f;
+  --secondary-bg-color: #1f4068;
+  --primary-text-color: #f4f4f4;
+  --secondary-text-color: #8892b0;
+  --heading-text-color: #50e3c2;
+  --success-color: #4caf50;
+  --error-color: #4caf50;
+  --button--icon-hightlight-color: #e43f5a;
+  --hover-bg: #ff6f61;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   background-color: var(--primary-bg-color);
-}
-a {
-  text-decoration: none;
 }
 .max-width {
   max-width: 1200px;
   margin: auto;
   padding: 10px;
 }
-html,
-body {
+body,
+html {
   width: 100%;
 }
 .heading-margin {
-  margin: 20px 0 40px 0;
+  margin: 20px 0 40px;
 }
 .dark-theme {
   --primary-bg-color: #060606;
@@ -50,25 +76,22 @@ body {
 }
 .hover-btn {
   transition: transform 0.4s linear;
-  background-color: var(--button--icon-hightlight-color);
-  color: var(--primary-text-color);
   padding: 8px;
   border-radius: 5px;
   border: none;
 }
+#typeBox,
+.logo-color {
+  color: var(--button--icon-hightlight-color);
+}
 .hover-btn:hover {
   transform: scale(1.1);
 }
-
-/* Header sections starts from here */
 header {
-  color: var(--primary-text-color);
   width: 100%;
-  position: relative;
   background-color: var(--secondary-bg-color);
 }
 .header-box {
-  /*  everything inside this box */
   font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
@@ -78,15 +101,22 @@ header {
   font-size: 1.7rem;
   font-weight: 600;
 }
-.logo-color {
-  color: var(--button--icon-hightlight-color);
+.about-box,
+.heading,
+.layer-here,
+.layer-here a,
+.modal,
+.more-btn,
+.small-container p:last-child,
+div.small-container,
+ul li a {
+  color: var(--primary-text-color);
 }
 nav ul li {
   display: inline-block;
   padding: 5px;
   margin: 0 5px;
   text-align: center;
-  position: relative;
 }
 nav ul li::after {
   content: "";
@@ -98,21 +128,17 @@ nav ul li::after {
   width: 0;
   border-radius: 4px;
   margin: auto;
-  background-color: var(--button--icon-hightlight-color);
-  transition: 0.5s ease;
+  transition: 0.5s;
 }
 ul li:hover::after {
   width: 90%;
-}
-ul li a {
-  text-decoration: none;
-  color: var(--primary-text-color);
 }
 #menu-open {
   cursor: pointer;
   display: none;
 }
-#menu-open:active {
+#menu-open:active,
+#toogleThgeme:active li label i {
   color: green;
 }
 .viewed-menu {
@@ -121,11 +147,9 @@ ul li a {
   z-index: 10;
 }
 li {
-  padding: 5px 0px;
-  position: relative;
+  padding: 5px 0;
 }
 li label {
-  font-size: 1.4rem;
   transition: 0.4s linear;
 }
 li input {
@@ -134,24 +158,19 @@ li input {
   left: -5%;
   opacity: 0;
 }
-#toogleThgeme:active li label i {
-  color: green;
-}
-
-/* Hero section starts from Here */
 .hero-container {
   width: 100%;
   height: calc(100vh - 30px);
-  position: relative;
-  background: url("images/useHero.jpg");
-  background-position: center;
-  background-size: cover;
+  background: url("images/useHero.jpg") center/cover;
+}
+.activee::after,
+.more-btn {
+  background-color: var(--button--icon-hightlight-color);
 }
 div.small-container {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--primary-text-color);
 }
 div.small-container p {
   font-size: 20px;
@@ -159,14 +178,6 @@ div.small-container p {
 }
 div.small-container h2 {
   font-size: 2rem;
-}
-.small-container p:last-child {
-  color: var(--primary-text-color);
-  font-size: 1.4rem;
-}
-#typeBox {
-  position: relative;
-  color: var(--button--icon-hightlight-color);
 }
 #typeBox::after {
   content: "";
@@ -177,18 +188,14 @@ div.small-container h2 {
   bottom: 1px;
   margin-left: 2px;
 }
-
-/* About Section starts from here */
 .about-container {
   min-height: 100vh;
   padding: 20px 0;
-  position: relative;
 }
 .about-box {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  color: var(--primary-text-color);
   min-height: 100vh;
 }
 .about-children {
@@ -203,25 +210,20 @@ div.small-container h2 {
 .about-children img {
   max-width: 400px;
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 15px #000;
   width: 100%;
   height: 80%;
   object-fit: cover;
 }
-
 .about-children h2 {
   font-size: 2rem;
-  margin: 16px 0px;
-}
-.about-children p {
-  font-size: 0.85rem;
-  text-align: justify;
+  margin: 16px 0;
 }
 .title-head {
   display: flex;
   gap: 10px;
-  padding: 4px 0px;
-  margin: 10px 0px;
+  padding: 4px 0;
+  margin: 10px 0;
 }
 .title-head .title {
   font-size: 1rem;
@@ -230,10 +232,9 @@ div.small-container h2 {
   position: relative;
 }
 .activee::after {
-  transition: width 0.3s ease;
+  transition: width 0.3s;
   content: "";
   position: absolute;
-  background-color: var(--button--icon-hightlight-color);
   left: 0;
   bottom: -2px;
   border-radius: 3px;
@@ -241,14 +242,19 @@ div.small-container h2 {
   height: 2px;
 }
 .explaination {
-  text-align: justify;
   display: none;
-  font-size: 0.85rem;
+}
+.heading,
+.layer-here,
+.layer-here p,
+footer {
+  text-align: center;
 }
 .explaination ul li {
-  margin: 8px 0px;
+  margin: 8px 0;
   font-size: 0.85rem;
 }
+.block-show-more,
 .show-info {
   display: block;
 }
@@ -257,59 +263,50 @@ div.small-container h2 {
   padding: 5px;
   width: 140px;
   height: 40px;
-  background-color: var(--button--icon-hightlight-color);
-  color: var(--primary-text-color);
   border: none;
   border-radius: 5px;
 }
-
-/* Modal styling starts from here */
+.modal,
+footer {
+  background-color: var(--secondary-bg-color);
+}
 .modal {
   display: none;
-  box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.5);
   width: 80vw;
   border-radius: 12px;
   min-height: 80vh;
-  background-color: var(--secondary-bg-color);
   position: absolute;
   top: 10%;
   left: 10%;
   padding: 20px;
-  color: var(--primary-text-color);
 }
 .modal p {
   margin-bottom: 20px;
 }
-/* My services section starts from Here */
 .services-container {
   min-height: 70vh;
 }
+.projects-container .max-width h2,
 .services-container .max-width h2 {
-  padding: 40px 0px;
+  padding: 40px 0;
 }
 .heading {
   font-size: 2rem;
-  color: var(--primary-text-color);
-  text-align: center;
 }
 .services-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 30px 0px;
+  margin: 30px 0;
   gap: 10px;
 }
 .show-more {
   display: none;
 }
-.block-show-more {
-  display: block;
-}
 #service-show {
   margin-left: 40px;
 }
-
-/* My Project section Begins from Here */
 .projects-container {
   min-height: 40vh;
   display: flex;
@@ -317,10 +314,7 @@ div.small-container h2 {
   align-items: center;
 }
 .projects-container div .heading {
-  margin: 0px 0px 40px 0px;
-}
-.projects-container .max-width h2 {
-  padding: 40px 0px;
+  margin: 0 0 40px;
 }
 .project-box {
   display: flex;
@@ -348,15 +342,13 @@ div.small-container h2 {
   left: 0;
   width: 100%;
   height: 0;
-  padding: 0px 10px;
-  text-align: center;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  color: var(--primary-text-color); 
   background: linear-gradient(#1f406875, #e43f5a);
   overflow: hidden;
   transition: height 0.3s linear;
@@ -373,10 +365,10 @@ div.small-container h2 {
 }
 .layer-here p {
   font-size: 0.85rem;
-  text-align: center;
 }
-.layer-here a {
-  color: var(--primary-text-color);
+.details-icons i,
+.skills-item h2 {
+  color: var(--button--icon-hightlight-color);
 }
 .project_see {
   cursor: pointer;
@@ -386,14 +378,19 @@ div.small-container h2 {
   font-weight: 600;
   border-radius: 5px;
 }
+.contact-container,
+.form-button,
+.project_see:hover,
+.skills-item,
+footer {
+  color: var(--primary-text-color);
+}
 .project_see:hover {
   background-color: #dc928b;
-  color: var(--primary-text-color);
 }
 .project-item:hover .layer-here {
   height: 100%;
 }
-/* My skills section Begins from here */
 .skills-container {
   margin: 40px 0;
 }
@@ -407,10 +404,9 @@ div.small-container h2 {
 .skills-item {
   flex-basis: 45%;
   min-width: 300px;
-  color: var(--primary-text-color);
 }
 .progress-item {
-  padding: 5px 0px;
+  padding: 5px 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -424,34 +420,34 @@ div.small-container h2 {
   height: 4px;
   background-color: var(--secondary-text-color);
 }
+.form-button,
+.progress-bar-percent {
+  background-color: var(--button--icon-hightlight-color);
+}
 .progress-bar-percent {
   width: 60%;
   height: 100%;
-  background-color: var(--button--icon-hightlight-color);
 }
 .skills-item p {
   text-align: justify;
 }
 .skills-item h2 {
   font-size: 1.4rem;
-  color: var(--button--icon-hightlight-color);
   font-weight: 500;
 }
 .skills-progress-box {
-  margin: 5px 0px;
+  margin: 5px 0;
 }
-
-/* Contact Us section Starts from here */
 .contact-container {
   min-height: 80vh;
-  margin: 20px 0px 50px 0px;
-  color: var(--primary-text-color);
+  margin: 20px 0 50px;
 }
 .contact-box {
   display: flex;
   gap: 20px;
 }
-.contact-item {
+.contact-item,
+.input-email input {
   flex-basis: 50%;
 }
 .contact-item:first-child {
@@ -460,7 +456,7 @@ div.small-container h2 {
   gap: 5px;
 }
 .contact-item h3:nth-child(2) {
-  margin: 15px 0px;
+  margin: 15px 0;
 }
 .small-details {
   display: flex;
@@ -473,14 +469,14 @@ div.small-container h2 {
   flex-direction: column;
 }
 .subhead-contact {
-  margin: 0px 0px 18px 0px;
+  margin: 0 0 18px;
 }
-.details-text p:nth-child(2) {
+.details-text p:nth-child(2),
+footer a {
   color: var(--secondary-text-color);
 }
 .details-icons i {
   font-size: 1.8rem;
-  color: var(--button--icon-hightlight-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -489,24 +485,21 @@ input,
 textarea {
   border: 2px solid var(--secondary-bg-color);
   padding: 12px 8px;
-  outline: none;
+  outline: 0;
   width: 100%;
   border-radius: 5px;
-  margin: 8px 0px;
+  margin: 8px 0;
 }
 input:focus,
 textarea:focus {
   border: 2px solid var(--success-color);
 }
 textarea {
-  margin-top: 0px;
+  margin-top: 0;
 }
 .input-email {
   display: flex;
   gap: 10px;
-}
-.input-email input {
-  flex-basis: 50%;
 }
 .input-email input[type="email"]:focus:valid {
   border-color: var(--success-color);
@@ -516,39 +509,26 @@ textarea {
 }
 .form-button {
   padding: 8px;
-  background-color: var(--button--icon-hightlight-color);
-  color: var(--primary-text-color);
   border-radius: 5px;
   border: none;
   transition: transform 0.4s linear;
   cursor: pointer;
 }
-
-/* Footer style begins from here */
 footer {
   margin-top: 15px;
   width: 100%;
-  background-color: var(--secondary-bg-color);
-  color: var(--primary-text-color);
   padding: 10px 0;
-  text-align: center;
 }
-footer a {
-  color: var(--secondary-text-color);
-}
-
-/* Scroll to top button starts from here */
 .scroll-box {
   width: 85px;
   height: 85px;
   padding: 5px;
   color: var(--secondary-text-color);
   background: conic-gradient(
-    var(--button--icon-hightlight-color) 0%,
+    var(--button--icon-hightlight-color) 0,
     var(--secondary-text-color) 100%
   );
   border-radius: 50%;
-  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
@@ -569,45 +549,36 @@ footer a {
   background-color: var(--secondary-bg-color);
   border-radius: 50%;
 }
-/* Media queries begins from here */
 @media (max-width: 943px) {
-  /* Header part */
-  #menu-open {
+  #menu-open,
+  nav ul li {
     display: block;
+  }
+  .skills-item,
+  nav ul {
+    width: 100%;
   }
   nav ul {
     background-color: var(--secondary-bg-color);
     position: absolute;
-    width: 100%;
     top: 100%;
     right: 0;
     text-align: center;
     display: none;
   }
   nav ul li {
-    display: block;
     margin: 20px;
   }
   ul li:hover::after {
     width: 80px;
   }
-  /* About section Part */
-  .about-box {
+  .about-box,
+  .contact-box {
     flex-direction: column;
   }
-
-  /* My Skills section starts from Here */
   .skills-box {
     flex-direction: column;
     gap: 10px;
-  }
-  .skills-item {
-    width: 100%;
-  }
-
-  /* Contact section starts from here */
-  .contact-box {
-    flex-direction: column;
   }
   .scroll-box {
     width: 60px;
@@ -619,7 +590,7 @@ footer a {
     flex-direction: column;
   }
   .input-email input {
-    margin: 0px;
+    margin: 0;
   }
   .project-item {
     min-width: 100%;
@@ -629,6 +600,6 @@ footer a {
     background-color: green;
   }
   #service-show {
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
